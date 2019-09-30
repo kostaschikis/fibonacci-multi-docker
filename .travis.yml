@@ -10,13 +10,13 @@ script:
 
 after_success:
   - docker build -t kostaschikis/multi-client ./client
-  - docker build -t kostaschikis/multi-nginx ./nginx
-  - docker build -t kostaschikis/multi-server ./server
-  - docker build -t kostaschikis/multi-worker ./worker
+  #- docker build -t kostaschikis/multi-nginx ./nginx
+  #- docker build -t kostaschikis/multi-server ./server
+  #- docker build -t kostaschikis/multi-worker ./worker
   # Log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Push images to docker
   - docker push kostaschikis/multi-client
-  - docker push kostaschikis/multi-nginx
-  - docker push kostaschikis/multi-server
-  - docker push kostaschikis/multi-worker
+  #- docker push kostaschikis/multi-nginx
+  #- docker push kostaschikis/multi-server
+  #- docker push kostaschikis/multi-worker
